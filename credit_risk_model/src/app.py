@@ -3,6 +3,7 @@ from flask_restful import reqparse, abort, Api, Resource
 import pickle
 import numpy as np
 import os
+from pathlib import Path
 # import sklearn
 from keras.models import load_model
 app = Flask(__name__)
@@ -24,12 +25,14 @@ def hello():
 
 
 def predict(input2model):
-  dirname = os.path.dirname('__file__')
-  print("directory : ",dirname)
-  filepath = os.path.join(dirname, 'final_rfc_credit_model.pkl')
-  print('filepath: ',filepath)
+  print("          os.path.firnamr :::::::  ",os.path.dirname(os.path.abspath(__file__)))
+  curr_dir = Path(__file__).parent
+  print("current directoty is : ",curr_dir)
+  file_path = curr_dir.joinpath('final_rfc_credit_model.pkl')
+  # filepath = os.path.join(dirname, 'final_rfc_credit_model.pkl')
+  print('filepath: ',file_path)
   # path_rel=os.path.dirname(os.path.realpath(filename))+'/'+filename
-  with open(filepath, 'rb') as pickle_file:
+  with open(file_path, 'rb') as pickle_file:
     try:
       print('in try')
       loaded_model = pickle.load(pickle_file)
