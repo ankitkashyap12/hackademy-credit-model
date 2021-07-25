@@ -36,7 +36,7 @@ def predict(input2model):
   print("#############  os.path.firnamr :::::::  ",os.path.dirname(os.path.abspath(__file__)))
   curr_dir = Path(__file__).parent
   print("current directoty is : ",curr_dir)
-  file_path = curr_dir.joinpath('src','final_rfc_credit_Model.pkl')
+  file_path = curr_dir.joinpath('final_rfc_credit_Model.pkl')
   # filepath = os.path.join(dirname, 'final_rfc_credit_model.pkl')
   print('filepath: ',file_path)
   # path_rel=os.path.dirname(os.path.realpath(filename))+'/'+filename
