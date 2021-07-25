@@ -24,10 +24,10 @@ def hello():
 
 
 def predict(input2model):
-  dirname = os.path.dirname('__file__')
-  filename = os.path.join(dirname, 'final_rfc_credit_model.pkl')
-  path_rel=os.path.dirname(os.path.realpath(filename))+'\\'+filename
-  with open(path_rel, 'rb') as pickle_file:
+  # dirname = os.path.dirname('__file__')
+  # filename = os.path.join(dirname, 'final_rfc_credit_model.pkl')
+  # path_rel=os.path.dirname(os.path.realpath(filename))+'\\'+filename
+  with open('final_rfc_credit_model.pkl', 'rb') as pickle_file:
     try:
       print('in try')
       loaded_model = pickle.load(pickle_file)
