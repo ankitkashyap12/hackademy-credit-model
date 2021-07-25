@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn credit-model.src.app:app
