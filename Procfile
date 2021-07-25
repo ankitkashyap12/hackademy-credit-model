@@ -1,1 +1,1 @@
-web: gunicorn credit-model.src.app:app
+web: gunicorn credit_risk_model.src.app:app
