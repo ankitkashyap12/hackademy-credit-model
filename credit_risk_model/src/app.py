@@ -8,7 +8,9 @@ from pathlib import Path
 from keras.models import load_model
 app = Flask(__name__)
 # api=Api(app)
-
+@app.route('/')
+def health():
+  return "All good !!"
 @app.route('/getProbability',methods=['GET'])
 def hello():
   content = request.get_json(silent=True)
